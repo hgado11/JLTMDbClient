@@ -82,3 +82,26 @@ static NSString * const kJLTMDbSearchMovie = @"search/movie";
 static NSString * const kJLTMDbSearchPerson = @"search/person";
 static NSString * const kJLTMDbSearchCompany = @"search/company";
 
+#pragma mark - TV
+
+//Documentation: http://docs.themoviedb.apiary.io/#tv
+static NSString * const kJLTMDbTVAiringToday=@"tv/airing_today";
+static NSString * const kJLTMDBTVTopRated=@"tv/top_rated";
+static NSString * const kJLTMDBTVPopular=@"tv/popular";
+static NSString * const kJLTMDbTV = @"tv/{id}";
+static NSString * const kJLTMDbTVAlternativeTitle = @"tv/{id}/alternative_titles";
+static NSString * const kJLTMDbTVCasts = @"tv/{id}/casts";
+static NSString * const kJLTMDbTVImages = @"tv/{id}/images";
+static NSString * const kJLTMDbTVKeywords = @"tv/{id}/keywords";
+static NSString * const kJLTMDbTVReleases = @"tv/{id}/releases";
+static NSString * const kJLTMDbTVTrailers = @"tv/{id}/trailers";
+static NSString * const kJLTMDbTVTranslations = @"tv/{id}/translations";
+static NSString * const kJLTMDbTVSimilar = @"tv/{id}/similar";
+static NSString * const kJLTMDbTVReviews = @"tv/{id}/reviews";
+static NSString * const kJLTMDbTVLists = @"tv/{id}/lists";
+static NSString * const kJLTMDbTVChanges = @"tv/{id}/changes";
+static NSString * const kJLTMDbTVLatest = @"tv/latest";
+static NSString * const kJLTMDbTVUpcoming = @"tv/upcoming";
+static NSString * const kJLTMDbTVNowPlaying = @"tv/now_playing";
+
+
