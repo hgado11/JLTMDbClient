@@ -70,7 +70,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     
     NSDictionary *movieDict = self.moviesArray[indexPath.row];
-    cell.textLabel.text = movieDict[@"original_title"];
+    cell.textLabel.text = movieDict[@"name"];
     cell.textLabel.textColor = [UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFill;
     if (movieDict[@"poster_path"] != [NSNull null]) {
@@ -86,7 +86,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     JLMovieDetailViewController *movieDetailViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"JLMovieDetailViewController"];
     movieDetailViewController.movieId = self.moviesArray[indexPath.row][@"id"];
-    movieDetailViewController.movieTitle = self.moviesArray[indexPath.row][@"title"];
+    movieDetailViewController.movieTitle = self.moviesArray[indexPath.row][@"name"];
     movieDetailViewController.imagesBaseUrlString = self.imagesBaseUrlString;
     [self.navigationController pushViewController:movieDetailViewController animated:YES];
 }
@@ -104,7 +104,7 @@
 }
 
 - (void) refresh {
-    NSArray *optionsArray = @[kJLTMDbMoviePopular, kJLTMDbMovieUpcoming, kJLTMDbMovieTopRated];
+    NSArray *optionsArray = @[kJLTMDbTVNowPlaying];
     __block UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Ok", @""), nil];
     [[JLTMDbClient sharedAPIInstance] GET:optionsArray[arc4random() % [optionsArray count]] withParameters:nil andResponseBlock:^(id response, NSError *error) {
         if (!error) {
