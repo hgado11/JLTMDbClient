@@ -46,7 +46,7 @@
     self.navigationItem.title = self.movieTitle;
     __block NSString *imageBackdrop;
     __block UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error", @"") message:NSLocalizedString(@"Please try again later", @"") delegate:self cancelButtonTitle:nil otherButtonTitles:NSLocalizedString(@"Ok", @""), nil];
-    [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbTV withParameters:@{@"id":self.movieId} andResponseBlock:^(id response, NSError *error) {
+    [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbMovie withParameters:@{@"id":self.movieId} andResponseBlock:^(id response, NSError *error) {
         if (!error) {
             self.movieDict = response;
             if (self.movieDict[@"backdrop_path"] != [NSNull null]){
